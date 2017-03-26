@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSMultithreadingExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,165 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="queue" translatesAutoresizingMaskIntoConstraints="NO" id="AEZ-YI-Kyg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ra6-0n-maP">
+                                <rect key="frame" x="46" y="52" width="283" height="447"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T1h-Wo-3PM">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="258.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aJ-ID-we8">
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="30.5"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435344827589" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Simple Synchronous Queue">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="syncBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kNJ-Pz-gva"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7R-wx-vvv">
+                                                <rect key="frame" x="0.0" y="38.5" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435344827589" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Simple Asynchronous Queue">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="asyncBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46O-eb-vHW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-TV-8NM">
+                                                <rect key="frame" x="0.0" y="76.5" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435344827589" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Queues with QoS">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="queueWithQoSBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VdD-Sw-A1x"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CC-VM-2Z7">
+                                                <rect key="frame" x="0.0" y="114.5" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435344827589" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Serial Queues">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="serialQueuesBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="izg-oF-dmv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RU8-H0-dmB">
+                                                <rect key="frame" x="0.0" y="152.5" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435344827589" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Concurrent Queues">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="concurrentQueuesBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1sw-0j-vF4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRX-ld-5Cw">
+                                                <rect key="frame" x="0.0" y="190.5" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435339999995" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Initailly Inactive Concurrent Queues">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="initallyInactiveQueueBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQm-k2-hHY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtu-d8-h3v">
+                                                <rect key="frame" x="0.0" y="228.5" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435339999995" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Queue With Delay">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="queueWithDelay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9e5-Wp-cRN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kr3-to-ccr">
+                                        <rect key="frame" x="0.0" y="266.5" width="283" height="180.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-iT-5h3">
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.87707435339999995" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="L9r-dz-Fa5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="Global Queue">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="globalQueue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oOE-Yq-7Eg"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SU4-BD-03h">
+                                                <rect key="frame" x="0.0" y="38" width="283" height="142.5"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.72351831899999997" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="142.5" id="pGv-jo-Hid">
+                                                        <variation key="heightClass=compact-widthClass=compact" constant="218"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="SU4-BD-03h" secondAttribute="bottom" id="8aI-69-hrB"/>
+                                            <constraint firstAttribute="bottom" secondItem="SU4-BD-03h" secondAttribute="bottom" id="9xF-DJ-a2e"/>
+                                            <constraint firstItem="SU4-BD-03h" firstAttribute="top" secondItem="GkO-iT-5h3" secondAttribute="bottom" constant="8" id="Ha7-XK-3nE"/>
+                                            <constraint firstItem="SU4-BD-03h" firstAttribute="leading" secondItem="Kr3-to-ccr" secondAttribute="leading" id="UrF-fK-VT7"/>
+                                            <constraint firstItem="SU4-BD-03h" firstAttribute="leading" secondItem="Kr3-to-ccr" secondAttribute="leading" id="WaR-Kz-X1K"/>
+                                            <constraint firstItem="SU4-BD-03h" firstAttribute="top" secondItem="GkO-iT-5h3" secondAttribute="bottom" constant="8" id="jp0-B6-9SV"/>
+                                            <constraint firstAttribute="trailing" secondItem="SU4-BD-03h" secondAttribute="trailing" id="sHb-VU-Ysg"/>
+                                            <constraint firstAttribute="trailing" secondItem="SU4-BD-03h" secondAttribute="trailing" id="uvP-1u-CV0"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="447" id="Icl-MR-IDv">
+                                        <variation key="heightClass=compact" constant="260"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ra6-0n-maP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="94c-Q4-Ivo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AEZ-YI-Kyg" secondAttribute="bottom" id="CSj-Gw-4W3"/>
+                            <constraint firstItem="AEZ-YI-Kyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GIr-80-TSZ"/>
+                            <constraint firstItem="AEZ-YI-Kyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="O0f-Ja-pNr"/>
+                            <constraint firstItem="Ra6-0n-maP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="Udk-fw-1b4"/>
+                            <constraint firstItem="Ra6-0n-maP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="ZRg-ut-okH"/>
+                            <constraint firstAttribute="trailing" secondItem="AEZ-YI-Kyg" secondAttribute="trailing" id="dj7-Mx-jg0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ra6-0n-maP" secondAttribute="trailing" constant="30" id="n1g-pY-Gx4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="SU4-BD-03h" id="jus-lW-mYa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="queue" width="802" height="543"/>
+    </resources>
 </document>

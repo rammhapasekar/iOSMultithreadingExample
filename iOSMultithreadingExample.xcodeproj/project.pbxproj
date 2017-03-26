@@ -13,6 +13,8 @@
 		3FA71DD71E87E14300CDAAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA71DD61E87E14300CDAAE2 /* Assets.xcassets */; };
 		3FA71DDA1E87E14300CDAAE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA71DD81E87E14300CDAAE2 /* LaunchScreen.storyboard */; };
 		3FA71DE51E87E14300CDAAE2 /* iOSMultithreadingExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA71DE41E87E14300CDAAE2 /* iOSMultithreadingExampleTests.swift */; };
+		3FA71DEF1E88113900CDAAE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA71DD11E87E14300CDAAE2 /* ViewController.swift */; };
+		3FA71DF11E8818C200CDAAE2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA71DF01E8818C200CDAAE2 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		3FA71DE01E87E14300CDAAE2 /* iOSMultithreadingExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMultithreadingExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA71DE41E87E14300CDAAE2 /* iOSMultithreadingExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMultithreadingExampleTests.swift; sourceTree = "<group>"; };
 		3FA71DE61E87E14300CDAAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FA71DF01E8818C200CDAAE2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		3FA71DC31E87E14300CDAAE2 = {
 			isa = PBXGroup;
 			children = (
+				3FA71DF01E8818C200CDAAE2 /* Default-568h@2x.png */,
 				3FA71DCE1E87E14300CDAAE2 /* iOSMultithreadingExample */,
 				3FA71DE31E87E14300CDAAE2 /* iOSMultithreadingExampleTests */,
 				3FA71DCD1E87E14300CDAAE2 /* Products */,
@@ -182,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA71DDA1E87E14300CDAAE2 /* LaunchScreen.storyboard in Resources */,
+				3FA71DF11E8818C200CDAAE2 /* Default-568h@2x.png in Resources */,
 				3FA71DD71E87E14300CDAAE2 /* Assets.xcassets in Resources */,
 				3FA71DD51E87E14300CDAAE2 /* Main.storyboard in Resources */,
 			);
@@ -210,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA71DEF1E88113900CDAAE2 /* ViewController.swift in Sources */,
 				3FA71DE51E87E14300CDAAE2 /* iOSMultithreadingExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
